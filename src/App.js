@@ -1,35 +1,29 @@
 import { useState } from 'react';
 import Header from './components/Header'
 import Main from './components/Main';
-import TextInput from './components/TextInput';
+import DateInput from './components/DateInput';
 
 export default function App() {
   
-  const [name, setName] = useState('');
+  const [Date, setDate] = useState('1988-03-28');
 
-  const [vowels, setVowels] = useState('');
-
-  function handleNameChange(newName) {
-    setName(newName)
-    setVowels(newName.match(/[aeiou]/gi))
+  function handleDateChange(newDate) {
+    setDate(newDate)
   }
 
   return (
     <>
-      <Header>Atividade Prévia - Filtragem de vogais em texto</Header>
+      <Header>Trabalho Prático</Header>
       <Main>
-        <TextInput
-          labelDescription="Digite o texto desejado:"
-          inputValue={name}
-          onInputChange={handleNameChange}
+        <DateInput
+          labelDescription="Informe sua data de nascimento:"
+          inputValue={Date}
+          onInputChange={handleDateChange}
         />
 
         <p className="text-center">
-          {vowels && vowels.length ? vowels.length : 0} vogais encontradas no texto:
+          Asd
         </p>
-        <div className="vowels-box">
-          {vowels}
-        </div>
       </Main>
     </>
   );

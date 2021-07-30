@@ -1,4 +1,4 @@
-export default function TextInput({
+export default function DateInput({
   labelDescription = 'Descrição do label',
   inputValue = 'Valor padrão',
   onInputChange = null,
@@ -19,9 +19,10 @@ export default function TextInput({
 
       <input
         autoFocus
-        id="inputName"
+        id="inputDate"
         className="border p-1"
-        type="text"
+        style={{width: "200px"}}
+        type="date"
         value={inputValue}
         onChange={handleInputChange}
       />
