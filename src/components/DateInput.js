@@ -12,7 +12,7 @@ export default function DateInput({
   }
 
   return (
-    <div className="flex flex-col my-4">
+    <div className="flex flex-col my-4 items-center">
       <label className="text-sm mb-1" htmlFor="inputName">
         {labelDescription}
       </label>
@@ -22,7 +22,7 @@ export default function DateInput({
         id="inputDate"
         className="border p-1"
         style={{width: "200px"}}
-        type="date"
+        type="datetime-local"
         value={inputValue}
         onChange={handleInputChange}
       />
