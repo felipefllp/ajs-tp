@@ -13,7 +13,7 @@ export default function DateInput({
 
   return (
     <div className="flex flex-col my-4 items-center">
-      <label className="text-sm mb-1" htmlFor="inputName">
+      <label className="text-sm mb-1" htmlFor="inputDate">
         {labelDescription}
       </label>
 
