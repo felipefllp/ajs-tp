@@ -1,3 +1,5 @@
+//-- FELIPE BARBOSA LOPES --//
+
 import { useEffect, useState } from 'react';
 
 import Header from './components/Header'
@@ -41,9 +43,27 @@ export default function App() {
     setSeconds(differenceInSeconds(today, birthday))
   }
 
+  useEffect(() => {
+    const minInterval = setInterval(() => {
+      setMinutes(curMin => curMin + 1)
+    }, 60000);
+    return () => {
+      clearInterval(minInterval)
+    }
+  }, [minutes])
+
+  useEffect(() => {
+    const secInterval = setInterval(() => {
+      setSeconds(curSec => curSec + 1)
+    }, 1000);
+    return () => {
+      clearInterval(secInterval)
+    }
+  }, [seconds])
+
   return (
     <>
-      <Header>Trabalho Prático</Header>
+      <Header>Trabalho Prático - Biblioteca date-fns</Header>
       <Main>
         <DateInput
           labelDescription="Informe sua data e horario de nascimento:"
